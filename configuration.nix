@@ -8,6 +8,10 @@
   # Spotify is unfree (proprietary); needs this to be installable at all.
   nixpkgs.config.allowUnfree = true;
 
+  # Enable flakes + the new nix CLI system-wide so `nixos-rebuild --flake`
+  # and the `rebuild` alias work without passing --extra-experimental-features.
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # home-manager's NixOS module is supplied as a flake input (see flake.nix),
   # so it no longer needs to be fetched/imported here. Its options
   # (home-manager.*) are still configured further down.
