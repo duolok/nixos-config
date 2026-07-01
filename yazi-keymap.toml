@@ -1,0 +1,7 @@
+# Yazi 25.x+ renamed the [manager] section to [mgr]; the old name is
+# silently ignored, which is why the `b` wallpaper key did nothing before.
+# --orphan detaches swaybg so it survives after the command returns.
+[mgr]
+prepend_keymap = [
+  { on = "b", run = "shell 'pkill swaybg; swaybg -m fill -i \"$@\"' --orphan", desc = "Set as wallpaper" },
+]
