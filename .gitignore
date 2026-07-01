@@ -1,0 +1,8 @@
+# nixos-rebuild build symlinks
+result
+result-*
+
+# editor / config backups
+*.bak
+*.bak-*
+*.hmbak
